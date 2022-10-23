@@ -19,5 +19,5 @@ data class Estado(
     val capital: String?,
 
     @ColumnInfo(name = "poblacion")
-    val poblacion: Double?
+    val poblacion: Double
 ) : Parcelable

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_estados_to_addEstadoFragment"
             app:destination="@id/addEstadoFragment" />
+        <action
+            android:id="@+id/action_nav_estados_to_updateEstadoFragment"
+            app:destination="@id/updateEstadoFragment" />
     </fragment>
 
     <fragment
@@ -29,6 +32,22 @@
     <fragment
         android:id="@+id/addEstadoFragment"
         android:name="com.practica_s06.ui.estado.AddEstadoFragment"
-        android:label="fragment_add_estado"
-        tools:layout="@layout/fragment_add_estado" />
+        android:label="@string/bt_add_estado"
+        tools:layout="@layout/fragment_add_estado" >
+        <action
+            android:id="@+id/action_addEstadoFragment_to_nav_estados"
+            app:destination="@id/nav_estados" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateEstadoFragment"
+        android:name="com.practica_s06.ui.estado.UpdateEstadoFragment"
+        android:label="@string/bt_update_estado"
+        tools:layout="@layout/fragment_update_estado" >
+        <action
+            android:id="@+id/action_updateEstadoFragment_to_nav_estados"
+            app:destination="@id/nav_estados" />
+        <argument
+            android:name="estado"
+            app:argType="com.practica_s06.model.Estado" />
+    </fragment>
 </navigation>

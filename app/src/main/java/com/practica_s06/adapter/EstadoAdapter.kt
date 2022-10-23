@@ -2,9 +2,11 @@ package com.practica_s06.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.practica_s06.databinding.EstadoFilaBinding
 import com.practica_s06.model.Estado
+import com.practica_s06.ui.estado.EstadoFragmentDirections
 
 class EstadoAdapter : RecyclerView.Adapter<EstadoAdapter.EstadoViewHolder>() {
     inner class EstadoViewHolder(private val itemBinding: EstadoFilaBinding) :
@@ -13,6 +15,11 @@ class EstadoAdapter : RecyclerView.Adapter<EstadoAdapter.EstadoViewHolder>() {
             itemBinding.tvNombre.text = estado.nombre
             itemBinding.tvCapital.text = estado.capital
             itemBinding.tvPais.text = estado.pais
+            itemBinding.vistaFila.setOnClickListener{
+                val action = EstadoFragmentDirections
+                    .actionNavEstadosToUpdateEstadoFragment(estado)
+                itemView.findNavController().navigate(action)
+            }
         }
     }
     private var listaEstados = emptyList<Estado>()

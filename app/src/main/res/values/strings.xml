@@ -23,5 +23,9 @@
     <string name="msg_data">Faltan datos</string>
     <string name="bt_update_estado">Actualizar Estado</string>
     <string name="msg_estado_updated">Estado actualizado</string>
-
+    <string name="bt_delete_estado">Eliminar Estado</string>
+    <string name="msg_estado_deleted">Estado eliminado</string>
+    <string name="msg_pregunta_deleted">¿Esta seguro de eliminar el  Estado</string>
+    <string name="msg_si">Si</string>
+    <string name="msg_no">No</string>
 </resources>

@@ -37,18 +37,23 @@ class AddEstadoFragment : Fragment() {
 
     private fun addEstado() {
         val nombre = binding.etNombre.text.toString()
+
         if(nombre.isNotEmpty()){
             val pais = binding.etPais.text.toString()
             val capital = binding.etCapital.text.toString()
-            val poblacion = binding.etPoblacion.text.toString().toDouble()
-            val estado = Estado(0,pais,nombre,capital,poblacion)
+            val poblacion = binding.etPoblacion.text.toString()
+            var poblacionDouble = 0.0
+            if(poblacion.isNotEmpty()) {
+                poblacionDouble = poblacion.toDouble()
+            }
+            val estado = Estado(0,pais,nombre,capital,poblacionDouble)
 
             estadoViewModel.saveEstado(estado)
 
             Toast.makeText(requireContext(),
                 getString(R.string.msg_estador_added),
-                Toast.LENGTH_SHORT).show()
-            //findNavController().navigate(R.id.action_addEstadoFragment_to_nav_estados)
+                Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_addEstadoFragment_to_nav_estados)
         }else{
             Toast.makeText(requireContext(),
                 getString(R.string.msg_data),
